@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industrial Safety Vision AI — Sameer Surla</title>
+  <meta name="description" content="Real-time industrial safety monitoring with Qwen VLM and a FLUX-based synthetic image generator, built at Detect Technologies." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="nav proj-nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html#projects" class="back-link">← All projects</a>
+      <div class="nav-right" style="margin-left:auto">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="case-hero">
+    <div class="aurora" aria-hidden="true"><div class="aurora-blob a1"></div><div class="aurora-blob a2"></div><div class="aurora-blob a3"></div></div>
+    <div class="container">
+      <span class="case-cat">GenAI · Vision-Language Models · Computer Vision</span>
+      <h1 class="case-title">Industrial Safety Vision AI</h1>
+      <p class="case-tagline">Real-time video safety monitoring powered by a vision-language model, paired with a FLUX-based generator that synthesizes rare hazard scenarios for training.</p>
+      <dl class="case-meta">
+        <div><dt>Role</dt><dd>AI Intern</dd></div>
+        <div><dt>Org</dt><dd>Detect Technologies</dd></div>
+        <div><dt>Timeline</dt><dd>Jan — May 2025</dd></div>
+        <div><dt>Mode</dt><dd>Real-time, multi-threaded</dd></div>
+      </dl>
+      <div class="case-links"><span class="note-pill">Proprietary — internal system</span></div>
+      <div class="case-stack"><span>Qwen VLM</span><span>FLUX</span><span>OpenCV</span><span>Streamlit</span><span>Hugging Face</span><span>Python</span><span>Multithreading</span></div>
+    </div>
+  </section>
+
+  <div class="case">
+    <div class="container case-grid">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#motivation">Motivation</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#build">What I built</a>
+        <a href="#results">Results</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#learnings">Learnings</a>
+      </aside>
+
+      <div class="case-content">
+        <section class="block" id="motivation">
+          <h2>Motivation</h2>
+          <p>Industrial sites need continuous safety monitoring, but hazardous events (missing PPE, unsafe proximity) are <strong>rare in real footage</strong> — which starves any model of training data. The project had two halves: a <strong>real-time analysis pipeline</strong> to watch live video, and a <strong>generative pipeline</strong> to synthesize realistic edge-case imagery so the system could learn what danger looks like.</p>
+        </section>
+
+        <section class="block" id="architecture">
+          <h2>Architecture</h2>
+          <p>A Vision-Language Model interprets video frames against safety prompts in real time, while a separate FLUX-based generator produces synthetic training data for rare scenarios. Everything is observable through a Streamlit interface and a structured logging framework.</p>
+          <div class="arch">
+            <div class="flow">
+              <div class="node"><span class="ni">📹</span><span class="nt">Live Video</span><span class="ns">OpenCV capture</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🧵</span><span class="nt">Multi-thread Frames</span><span class="ns">parallel decode</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">👁️</span><span class="nt">Qwen VLM</span><span class="ns">scene reasoning</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🚨</span><span class="nt">Safety Verdict</span><span class="ns">+ logging</span></div>
+            </div>
+            <p class="arch-cap">Real-time path. A parallel FLUX generator feeds synthetic edge cases back into training.</p>
+          </div>
+        </section>
+
+        <section class="block" id="build">
+          <h2>What I built</h2>
+          <ul class="c-list">
+            <li><strong>End-to-end Gen-AI for industrial safety</strong> — both image generation and real-time video analysis pipelines.</li>
+            <li>A <strong>customizable image generator</strong> on HuggingFace's <strong>FLUX</strong> model with both GUI and headless (non-GUI) modes.</li>
+            <li>A <strong>logging framework</strong> capturing prompt and configuration data for full traceability and reproducibility.</li>
+            <li><strong>Multi-threaded video analysis</strong> with <strong>Qwen VLM, OpenCV and Streamlit</strong> for real-time monitoring.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="results">
+          <h2>Results</h2>
+          <div class="metrics">
+            <div class="metric"><b>Real-time</b><span>Live video analysis</span></div>
+            <div class="metric"><b>2 modes</b><span>GUI + headless generator</span></div>
+            <div class="metric"><b>Full trace</b><span>Prompt &amp; config logging</span></div>
+          </div>
+        </section>
+
+        <section class="block" id="challenges">
+          <h2>Challenges</h2>
+          <ul class="c-list">
+            <li><strong>Latency vs. accuracy:</strong> VLM inference is heavy; multi-threading the frame pipeline kept analysis real-time without dropping critical frames.</li>
+            <li><strong>Data scarcity:</strong> real hazards are rare, so FLUX-generated synthetic scenarios filled the gap with controllable, labeled edge cases.</li>
+            <li><strong>Reproducibility:</strong> generative output is sensitive to prompts/config — the logging framework made every result traceable.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="learnings">
+          <h2>Learnings</h2>
+          <ul class="c-list">
+            <li><strong>Synthetic data is a force multiplier</strong> when real edge cases are scarce or dangerous to capture.</li>
+            <li>VLMs unlock <strong>open-vocabulary</strong> monitoring — you describe hazards in language instead of training a fixed-class detector.</li>
+            <li>For real-time CV, the <strong>systems engineering</strong> (threading, I/O) matters as much as the model.</li>
+          </ul>
+        </section>
+
+        <!--
+          ============================================================
+          DEMO & VISUALS — hidden for now. Uncomment when ready.
+          (Internal system; add a screen recording of the Streamlit UI + sample frames.)
+          ============================================================
+        <section class="block" id="media">
+          <h2>Demo &amp; visuals</h2>
+          <p>Add a screen recording of the monitoring UI and sample generated frames here.</p>
+        </section>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <div class="case-next">
+    <div class="container">
+      <a href="diabetic-ulcer-detection.html">
+        <span><span class="cn-label">Next project</span><br /><span class="cn-title">Diabetic Foot Ulcer Detection</span></span>
+        <span class="cn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sameer Surla</span>
+      <span class="footer-mark">Designed &amp; built from scratch</span>
+      <button class="to-top" id="toTop" aria-label="Back to top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Surcharge ETL Platform — Sameer Surla</title>
+  <meta name="description" content="Config-driven Ab Initio ETL platform processing 113M+ rows, cutting rate-update turnaround from 10 days to 4 hours at FedEx." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="nav proj-nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html#projects" class="back-link">← All projects</a>
+      <div class="nav-right" style="margin-left:auto">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="case-hero">
+    <div class="aurora" aria-hidden="true"><div class="aurora-blob a1"></div><div class="aurora-blob a2"></div><div class="aurora-blob a3"></div></div>
+    <div class="container">
+      <span class="case-cat">Data Engineering · Flagship · Production</span>
+      <h1 class="case-title">US Surcharge ETL Platform</h1>
+      <p class="case-tagline">A config-driven Ab Initio pipeline that ingests and validates 113M+ rows of surcharge data and collapsed rate-update turnaround from 10 days to 4 hours.</p>
+      <dl class="case-meta">
+        <div><dt>Role</dt><dd>Data Engineer I — Lead</dd></div>
+        <div><dt>Org</dt><dd>FedEx · US RQ Team</dd></div>
+        <div><dt>Timeline</dt><dd>2025 — Present</dd></div>
+        <div><dt>Scale</dt><dd>113M+ rows · 25 months</dd></div>
+      </dl>
+      <div class="case-links"><span class="note-pill">Proprietary — internal FedEx system</span></div>
+      <div class="case-stack"><span>Ab Initio</span><span>PDL</span><span>Graphs</span><span>SAS (legacy)</span><span>SQL</span><span>Teradata</span><span>Shell</span></div>
+    </div>
+  </section>
+
+  <div class="case">
+    <div class="container case-grid">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#motivation">Motivation</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#build">What I built</a>
+        <a href="#results">Results</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#learnings">Learnings</a>
+      </aside>
+
+      <div class="case-content">
+        <section class="block" id="motivation">
+          <h2>Motivation</h2>
+          <p>The US Revenue Quality team maintained a surcharge dashboard powered by an aging <strong>SAS</strong> workflow. Every time rates changed, an analyst manually reran a chain of scripts, hand-checked outputs and reconciled totals — a process that took roughly <strong>10 days</strong> and was error-prone at the scale of tens of millions of rows.</p>
+          <p>The goal: migrate to <strong>Ab Initio</strong>, make it <strong>config-driven</strong> so rate changes become a data edit rather than a code change, and add validation so accuracy is provable instead of assumed.</p>
+        </section>
+
+        <section class="block" id="architecture">
+          <h2>Architecture</h2>
+          <p>The pipeline is parameterized end-to-end with Ab Initio <strong>PDL</strong> (Parameter Definition Language). Rate tables and run dates live in config; the same graphs run for any month without modification.</p>
+          <div class="arch">
+            <div class="flow">
+              <div class="node"><span class="ni">🗄️</span><span class="nt">Source Extracts</span><span class="ns">Teradata / files</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">⚙️</span><span class="nt">PDL Config</span><span class="ns">rates · dates · keys</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🔗</span><span class="nt">Ab Initio Graphs</span><span class="ns">transform · join</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">✅</span><span class="nt">Validation</span><span class="ns">row · null · dup</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">📊</span><span class="nt">Dashboard + Email</span><span class="ns">automated</span></div>
+            </div>
+            <p class="arch-cap">Config-driven flow — a rate change is a parameter edit, not a code change.</p>
+          </div>
+        </section>
+
+        <section class="block" id="build">
+          <h2>What I built</h2>
+          <ul class="c-list">
+            <li><strong>Config-driven graphs in PDL</strong> — rate tables, effective dates and join keys are externalized, so a new rate cycle is a parameter change.</li>
+            <li><strong>Full SAS → Ab Initio migration</strong> of the surcharge logic across 25 months of historical data (113M+ rows).</li>
+            <li><strong>A validation layer</strong> — automated row-count reconciliation, null checks, duplicate-key detection and period-over-period rollups that block bad runs.</li>
+            <li><strong>An automated reporting workflow</strong> that extracts backend data and distributes the refreshed dashboard via email with zero manual steps.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="results">
+          <h2>Results</h2>
+          <div class="metrics">
+            <div class="metric"><b>10d→4h</b><span>Rate-update turnaround</span></div>
+            <div class="metric"><b>113M+</b><span>Rows in production</span></div>
+            <div class="metric"><b>25</b><span>Months reconciled</span></div>
+            <div class="metric"><b>0</b><span>Manual reruns after launch</span></div>
+          </div>
+          <div class="callout"><p>The headline is the turnaround drop — <strong>10 days to ~4 hours</strong> — but the bigger win is that correctness became <em>provable</em> through automated validation rather than manual spot-checks.</p></div>
+        </section>
+
+        <section class="block" id="challenges">
+          <h2>Challenges</h2>
+          <ul class="c-list">
+            <li><strong>Parity with legacy SAS:</strong> the old logic had implicit edge-case handling. I reverse-engineered it and validated the new pipeline against historical outputs row-for-row before cutover.</li>
+            <li><strong>Scale:</strong> joins across 113M+ rows needed careful partitioning and key design in Ab Initio to stay performant.</li>
+            <li><strong>Trust:</strong> stakeholders relied on the dashboard for revenue decisions, so validation fails loudly rather than silently producing wrong numbers.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="learnings">
+          <h2>Learnings</h2>
+          <ul class="c-list">
+            <li><strong>Config over code</strong> is the highest-leverage decision in ETL — it moves change-management from engineering to operations safely.</li>
+            <li>Migration is mostly about <strong>provable equivalence</strong>, not new features. Validation is the product.</li>
+            <li>Performance at scale comes from <strong>data layout</strong> (partitioning, keys) far more than micro-optimizations.</li>
+          </ul>
+        </section>
+
+        <!--
+          ============================================================
+          DEMO & VISUALS — hidden for now. Uncomment when ready.
+          (Internal FedEx system; add a sanitized architecture walkthrough.)
+          ============================================================
+        <section class="block" id="media">
+          <h2>Demo &amp; visuals</h2>
+          <p>Add a sanitized architecture walkthrough video or diagram here.</p>
+        </section>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <div class="case-next">
+    <div class="container">
+      <a href="rag-chatbot.html">
+        <span><span class="cn-label">Next project</span><br /><span class="cn-title">RAG Multi-Doc Q&amp;A Chatbot</span></span>
+        <span class="cn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sameer Surla</span>
+      <span class="footer-mark">Designed &amp; built from scratch</span>
+      <button class="to-top" id="toTop" aria-label="Back to top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

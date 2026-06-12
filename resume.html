@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résumé — Sameer Surla</title>
+  <meta name="description" content="Résumé of Sameer Surla — Data Engineer at FedEx and AI Systems Engineer, IIT Madras." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .rwrap { max-width: 900px; margin: 0 auto; padding: 7rem 1.6rem 5rem; position: relative; z-index: 2; }
+    .rbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+    .rbar-actions { display: flex; gap: .6rem; }
+    .paper { background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.6rem; box-shadow: var(--shadow); }
+    .rhead { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 1.4rem; margin-bottom: 1.6rem; }
+    .rname { font-size: 2.2rem; font-weight: 600; }
+    .rrole { color: var(--accent); font-weight: 700; margin-top: .2rem; }
+    .rcontact { font-family: var(--font-mono); font-size: .82rem; color: var(--text-dim); display: flex; flex-direction: column; gap: .25rem; text-align: right; }
+    .rcontact a { color: var(--text-dim); } .rcontact a:hover { color: var(--accent); }
+    .rsec { margin-bottom: 1.7rem; }
+    .rsec h2 { font-family: var(--font-mono); font-size: .9rem; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: .4rem; margin-bottom: 1rem; }
+    .ritem { margin-bottom: 1.1rem; }
+    .ritop { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .rtitle { font-weight: 700; font-family: var(--font-body); }
+    .rsub { color: var(--text-dim); font-size: .92rem; }
+    .rdate { font-family: var(--font-mono); font-size: .8rem; color: var(--text-faint); white-space: nowrap; }
+    .rpoints { margin: .5rem 0 0; display: grid; gap: .3rem; }
+    .rpoints li { position: relative; padding-left: 1.2rem; color: var(--text-dim); font-size: .92rem; }
+    .rpoints li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+    .rskill { font-size: .92rem; color: var(--text-dim); margin-bottom: .4rem; }
+    .rskill b { color: var(--text); }
+    @media print {
+      .grain, .cursor-glow, .nav, .rbar { display: none !important; }
+      body { background: #fff; color: #000; }
+      .paper { box-shadow: none; border: none; padding: 0; background: #fff; }
+      .rsec h2, .rrole { color: #1d3a8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { color: #000 !important; }
+      .rwrap { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="nav proj-nav" id="nav">
+    <div class="nav-pill">
+      <a href="index.html" class="back-link">← Back to site</a>
+      <div class="nav-right" style="margin-left:auto">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="rwrap">
+    <div class="rbar">
+      <span style="font-family:var(--font-mono);font-size:.82rem;color:var(--text-faint)">/ résumé</span>
+      <div class="rbar-actions">
+        <button class="btn btn-glass" onclick="window.print()">Print</button>
+        <a href="assets/Sameer_Surla_IIT_Madras_Resume.pdf?v=2" class="btn btn-primary" target="_blank" rel="noopener">Download PDF</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <header class="rhead">
+        <div>
+          <div class="rname">Sameer Surla</div>
+          <div class="rrole">Data Engineer @ FedEx · GenAI &amp; Agentic AI</div>
+        </div>
+        <div class="rcontact">
+          <a href="mailto:sameersurla07@gmail.com">sameersurla07@gmail.com</a>
+          <span>+91-7219736248</span>
+          <a href="https://github.com/sameersurla-iitm" target="_blank" rel="noopener">github.com/sameersurla-iitm</a>
+          <a href="https://www.linkedin.com/in/sameer-surla-iitm/" target="_blank" rel="noopener">linkedin.com/in/sameer-surla-iitm</a>
+        </div>
+      </header>
+
+      <section class="rsec">
+        <h2>Experience</h2>
+        <div class="ritem">
+          <div class="ritop"><div><span class="rtitle">Data Engineer I</span> — <span class="rsub">FedEx, Bengaluru</span></div><span class="rdate">Jul 2025 — Present</span></div>
+          <div class="rsub"><em>US Surcharge Dashboard — SAS → Ab Initio Migration · US RQ Team</em></div>
+          <ul class="rpoints">
+            <li>Led design and development of a production-grade ETL pipeline processing 113M+ rows (25 months of data).</li>
+            <li>Built a config-driven solution using Ab Initio PDL, reducing rate-update turnaround from 10 days to 4 hours.</li>
+            <li>Ensured data accuracy and consistency through large-scale validation of historical datasets.</li>
+            <li>Developed an automated reporting workflow for backend data extraction and email distribution.</li>
+          </ul>
+        </div>
+        <div class="ritem">
+          <div class="ritop"><div><span class="rtitle">Artificial Intelligence Intern</span> — <span class="rsub">Detect Technologies, Chennai</span></div><span class="rdate">Jan 2025 — May 2025</span></div>
+          <ul class="rpoints">
+            <li>Integrated Gen-AI for industrial safety via end-to-end image generation and real-time video analysis pipelines.</li>
+            <li>Designed a customizable image generator with Hugging Face's FLUX model (GUI and non-GUI modes).</li>
+            <li>Developed a logging framework to capture detailed prompt and configuration data for traceability.</li>
+            <li>Deployed multi-threaded video analysis using Qwen VLM, OpenCV &amp; Streamlit for real-time safety monitoring.</li>
+          </ul>
+        </div>
+        <div class="ritem">
+          <div class="ritop"><div><span class="rtitle">Artificial Intelligence Intern</span> — <span class="rsub">Diax.AI, Chennai</span></div><span class="rdate">May 2024 — Jul 2024</span></div>
+          <ul class="rpoints">
+            <li>Developed a deep-learning model to detect diabetic foot ulcers, now adopted by the Tamil Nadu State Government.</li>
+            <li>Achieved 95% accuracy in YOLO-based ulcer detection, with potential impact over 10M patients.</li>
+            <li>Enhanced model robustness by 15% through annotation and augmentation of 3,000+ images using Roboflow.</li>
+            <li>Led the full software lifecycle: preprocessing, training and deployment.</li>
+          </ul>
+        </div>
+        <div class="ritem">
+          <div class="ritop"><div><span class="rtitle">SDE &amp; Reliability Intern</span> — <span class="rsub">MachIntell, Chennai</span></div><span class="rdate">Feb 2024 — May 2024</span></div>
+          <ul class="rpoints">
+            <li>Developed solutions for OEMs to detect and resolve machine malfunctions for reliability engineering.</li>
+            <li>Achieved 98.76% accuracy on a hardware product for sensor and actuator monitoring.</li>
+            <li>Reduced diagnosis time by 40% via real-time malfunction analysis using MCF, Laplace and event plots.</li>
+            <li>Integrated detection across database, frontend, backend and hardware teams.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="rsec">
+        <h2>Projects</h2>
+        <div class="ritem"><div class="rtitle">Atlas — Autonomous Research Agent &nbsp;<a href="projects/atlas-research-agent.html" style="font-family:var(--font-mono);font-size:.74rem;color:var(--accent)">[case study]</a> <a href="https://atlas-research-agent.streamlit.app/" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:.74rem;color:var(--accent)">[live demo]</a></div><ul class="rpoints"><li>4-agent autonomous research pipeline (Planner→Researcher→Critic→Synthesizer) doing live web research, self-critique loops, and streaming fully-cited reports via Gemini &amp; Groq LLMs.</li><li>Cross-model failover with rate-limit pacing across free LLM tiers — $0 cost, 8+ cited sources and verified telemetry per run; source-grounded extraction eliminates hallucinated citations.</li></ul></div>
+        <div class="ritem"><div class="rtitle">RAG-Powered Multi-Doc Q&amp;A Chatbot</div><ul class="rpoints"><li>FAISS indexing + HuggingFace embeddings; integrated Cohere LLM for 95% multi-doc accuracy; RCTS chunking cut latency 35%.</li></ul></div>
+        <div class="ritem"><div class="rtitle">Lunar Lander — Reinforcement Learning</div><ul class="rpoints"><li>DQN agent in OpenAI Gym with experience replay + target networks; reached avg reward ~250, surpassing the solved threshold (200) within 800 episodes.</li></ul></div>
+        <div class="ritem"><div class="rtitle">Credit Card Default Prediction</div><ul class="rpoints"><li>XGBoost at 90% validation accuracy over 300K+ transactions; Gradient Boosting at 86.3% F1 and 0.870 AUC.</li></ul></div>
+        <div class="ritem"><div class="rtitle">Fantasy IPL Prediction Hackathon — AI Club IITM</div><ul class="rpoints"><li>87% accuracy and 0.87 AUC on 22K+ profiles using TensorFlow; reduced WMAE by 90% with RF/XGBoost and stacking.</li></ul></div>
+        <div class="ritem"><div class="rtitle">Deep Learning Transliteration Model — RNN</div><ul class="rpoints"><li>LSTM model for Hindi→English transliteration on 200K+ sentences; improved accuracy 76.8% → 90.6%.</li></ul></div>
+      </section>
+
+      <section class="rsec">
+        <h2>Education</h2>
+        <div class="ritem"><div class="ritop"><div><span class="rtitle">B.Tech, Civil Engineering</span> — <span class="rsub">IIT Madras</span></div><span class="rdate">2021 — 2025</span></div><div class="rsub">CGPA 7.92 / 10.0</div></div>
+        <div class="ritem"><div class="ritop"><div><span class="rtitle">Class XII (PCM)</span> — <span class="rsub">Narayana Junior College, Mumbai</span></div><span class="rdate">2021</span></div><div class="rsub">95.67%</div></div>
+      </section>
+
+      <section class="rsec">
+        <h2>Skills &amp; Certifications</h2>
+        <div class="rskill"><b>Languages:</b> Python, SQL, C++, MATLAB, HTML, CSS</div>
+        <div class="rskill"><b>AI / ML:</b> PyTorch, TensorFlow, Keras, Scikit-learn, XGBoost, OpenCV, NLTK, OpenAI Gym</div>
+        <div class="rskill"><b>GenAI / LLM:</b> RAG, Agentic &amp; Multi-Agent Systems, Prompt Engineering, FAISS, LangChain, Hugging Face, Cohere, VLMs, Embeddings</div>
+        <div class="rskill"><b>Data Engineering:</b> Ab Initio, PDL, SAS, ETL, Teradata, Data Validation</div>
+        <div class="rskill"><b>Tools:</b> Git/GitHub, Pydantic, Streamlit, Jupyter, Google Colab, Roboflow, Tableau, LaTeX, Kaggle</div>
+        <div class="rskill"><b>Certifications:</b> Deep Learning, ML &amp; Algorithms (Stanford); Data Analytics (Google)</div>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

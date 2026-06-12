@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" role="img" aria-label="LinkedIn banner for Sameer Surla">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d16"/>
+      <stop offset="1" stop-color="#111626"/>
+    </linearGradient>
+
+    <radialGradient id="haloBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 80) rotate(30) scale(520 260)">
+      <stop offset="0" stop-color="#6d9eff" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#6d9eff" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="haloViolet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1450 360) rotate(-20) scale(560 260)">
+      <stop offset="0" stop-color="#9b8cff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#9b8cff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d9eff"/>
+      <stop offset="0.55" stop-color="#8b7bff"/>
+      <stop offset="1" stop-color="#b07bff"/>
+    </linearGradient>
+
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd98a"/>
+      <stop offset="1" stop-color="#f0b25e"/>
+    </linearGradient>
+
+    <filter id="softBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#bg)"/>
+  <rect width="1584" height="396" fill="url(#grid)" opacity="0.32"/>
+
+  <ellipse cx="300" cy="80" rx="520" ry="260" fill="url(#haloBlue)"/>
+  <ellipse cx="1450" cy="360" rx="560" ry="260" fill="url(#haloViolet)"/>
+
+  <circle cx="1230" cy="90" r="95" fill="#6d9eff" opacity="0.24" filter="url(#softBlur)"/>
+  <circle cx="1370" cy="170" r="80" fill="#f5c97b" opacity="0.20" filter="url(#softBlur)"/>
+
+  <g transform="translate(86,58)">
+    <text x="0" y="28" fill="url(#gold)" font-size="24" font-family="Satoshi, Inter, Segoe UI, Arial, sans-serif" font-weight="700" letter-spacing="1.6">AI SYSTEMS + DATA ENGINEERING</text>
+
+    <text x="0" y="124" fill="#eef1f8" font-size="94" font-family="Clash Display, Satoshi, Inter, Segoe UI, Arial, sans-serif" font-weight="700" letter-spacing="-1.4">Sameer Surla</text>
+
+    <text x="0" y="184" fill="#9aa4ba" font-size="34" font-family="Satoshi, Inter, Segoe UI, Arial, sans-serif" font-weight="600">Data Engineer @ FedEx | IIT Madras '25</text>
+
+    <rect x="0" y="214" rx="16" ry="16" width="980" height="76" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+
+    <text x="28" y="260" fill="#d8def0" font-size="28" font-family="Satoshi, Inter, Segoe UI, Arial, sans-serif" font-weight="600">RAG · LLM Applications · Agentic AI · Computer Vision · Data Platforms</text>
+  </g>
+
+  <g transform="translate(1188,258)">
+    <rect x="0" y="0" width="320" height="92" rx="20" fill="rgba(11,15,25,0.62)" stroke="rgba(255,255,255,0.14)"/>
+    <rect x="16" y="16" width="8" height="60" rx="4" fill="url(#accent)"/>
+    <text x="36" y="42" fill="#eef1f8" font-size="28" font-family="Satoshi, Inter, Segoe UI, Arial, sans-serif" font-weight="700">113M+ rows @ scale</text>
+    <text x="36" y="68" fill="#9aa4ba" font-size="20" font-family="Satoshi, Inter, Segoe UI, Arial, sans-serif" font-weight="500">10 days → 4 hours turnaround</text>
+  </g>
+
+  <line x1="86" y1="334" x2="1036" y2="334" stroke="rgba(255,255,255,0.22)"/>
+  <text x="86" y="366" fill="#8f9ab2" font-size="20" font-family="Space Mono, Consolas, monospace">github.com/sameersurla-iitm</text>
+  <text x="618" y="366" fill="#8f9ab2" font-size="20" font-family="Space Mono, Consolas, monospace">linkedin.com/in/sameer-surla-iitm</text>
+
+  <g transform="translate(1488,16)">
+    <rect x="0" y="0" width="80" height="80" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="40" y="53" text-anchor="middle" fill="url(#accent)" font-size="42" font-family="Clash Display, Satoshi, Inter, Segoe UI, Arial, sans-serif" font-weight="700">S</text>
+  </g>
+</svg>

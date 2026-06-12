@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d16"/>
+      <stop offset="1" stop-color="#111626"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d9eff"/>
+      <stop offset="1" stop-color="#b07bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="140" cy="120" r="240" fill="#6d9eff" opacity="0.20"/>
+  <circle cx="1080" cy="540" r="260" fill="#9b8cff" opacity="0.18"/>
+  <circle cx="960" cy="120" r="180" fill="#f5c97b" opacity="0.14"/>
+  <text x="90" y="250" font-family="'Space Mono', monospace" font-size="26" fill="#f5c97b">/ AI Systems &amp; Data Engineer</text>
+  <text x="86" y="380" font-family="'Clash Display', Arial, sans-serif" font-size="104" font-weight="700" fill="#eef1f8">Sameer Surla</text>
+  <text x="90" y="450" font-family="'Satoshi', Arial, sans-serif" font-size="30" fill="#9aa4ba">Data Engineer @ FedEx · IIT Madras</text>
+  <text x="90" y="510" font-family="'Satoshi', Arial, sans-serif" font-size="26" fill="#626d85">RAG · LLM Apps · Agentic AI · Computer Vision · Data Platforms</text>
+</svg>

@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Node (only if you later add tooling)
+node_modules/
+npm-debug.log*
+
+# Vercel
+.vercel
+
+# Private local notes — keep off GitHub (do not upload)
+MAINTENANCE.md

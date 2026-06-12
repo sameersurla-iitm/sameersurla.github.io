@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sameersurla.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://sameersurla.vercel.app/resume.html</loc><priority>0.8</priority></url>
+  <url><loc>https://sameersurla.vercel.app/projects/fedex-etl-pipeline.html</loc><priority>0.9</priority></url>
+  <url><loc>https://sameersurla.vercel.app/projects/rag-chatbot.html</loc><priority>0.9</priority></url>
+  <url><loc>https://sameersurla.vercel.app/projects/industrial-vision-ai.html</loc><priority>0.9</priority></url>
+  <url><loc>https://sameersurla.vercel.app/projects/diabetic-ulcer-detection.html</loc><priority>0.9</priority></url>
+  <url><loc>https://sameersurla.vercel.app/projects/lunar-lander-rl.html</loc><priority>0.8</priority></url>
+  <url><loc>https://sameersurla.vercel.app/projects/credit-default-prediction.html</loc><priority>0.8</priority></url>
+</urlset>

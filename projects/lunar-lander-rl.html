@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunar Lander — Deep RL — Sameer Surla</title>
+  <meta name="description" content="A DQN reinforcement-learning agent that lands a craft in OpenAI Gym, reaching a reward score of 500 via experience replay and target networks." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="nav proj-nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html#projects" class="back-link">← All projects</a>
+      <div class="nav-right" style="margin-left:auto">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="case-hero">
+    <div class="aurora" aria-hidden="true"><div class="aurora-blob a1"></div><div class="aurora-blob a2"></div><div class="aurora-blob a3"></div></div>
+    <div class="container">
+      <span class="case-cat">Reinforcement Learning · Deep Q-Networks</span>
+      <h1 class="case-title">Lunar Lander — Deep RL</h1>
+      <p class="case-tagline">A reinforcement-learning agent that learns to land a spacecraft in OpenAI Gym — reaching a reward score of 500 through DQN, experience replay and target networks.</p>
+      <dl class="case-meta">
+        <div><dt>Role</dt><dd>Solo build</dd></div>
+        <div><dt>Type</dt><dd>Personal project</dd></div>
+        <div><dt>Timeline</dt><dd>Feb — Apr 2024</dd></div>
+        <div><dt>Result</dt><dd>Reward 500</dd></div>
+      </dl>
+      <div class="case-links"><a href="https://github.com/sameersurla-iitm" target="_blank" rel="noopener" class="btn btn-glass">View on GitHub →</a></div>
+      <div class="case-stack"><span>DQN</span><span>OpenAI Gym</span><span>PyTorch</span><span>Experience Replay</span><span>ε-greedy</span><span>Python</span></div>
+    </div>
+  </section>
+
+  <div class="case">
+    <div class="container case-grid">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#motivation">Motivation</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#build">What I built</a>
+        <a href="#results">Results</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#learnings">Learnings</a>
+      </aside>
+
+      <div class="case-content">
+        <section class="block" id="motivation">
+          <h2>Motivation</h2>
+          <p>LunarLander is a classic control problem: balance thrust to land softly between two flags. It's a perfect testbed for <strong>deep reinforcement learning</strong> — sparse rewards, continuous state, and the need to balance exploration against exploitation. I wanted to implement DQN from the ground up and actually solve it.</p>
+        </section>
+
+        <section class="block" id="architecture">
+          <h2>Architecture</h2>
+          <p>The agent observes the environment state, picks actions via an ε-greedy policy, and learns from sampled past transitions stored in a replay buffer. A separate target network stabilizes the learning signal.</p>
+          <div class="arch">
+            <div class="flow">
+              <div class="node"><span class="ni">🌒</span><span class="nt">Gym Env</span><span class="ns">state, reward</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🎲</span><span class="nt">ε-greedy Policy</span><span class="ns">explore/exploit</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🗃️</span><span class="nt">Replay Buffer</span><span class="ns">sample batches</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🧠</span><span class="nt">DQN + Target Net</span><span class="ns">stable updates</span></div>
+            </div>
+            <p class="arch-cap">Experience replay + a target network are what make DQN converge.</p>
+          </div>
+        </section>
+
+        <section class="block" id="build">
+          <h2>What I built</h2>
+          <ul class="c-list">
+            <li>An <strong>RL agent</strong> that lands a spacecraft, optimizing control for a stable touchdown.</li>
+            <li>A <strong>Q-learning agent</strong> in OpenAI Gym reaching <strong>95% convergence in 800 episodes</strong> with an ε-greedy strategy.</li>
+            <li>Performance pushed to a <strong>reward score of 500</strong> using experience replay and target networks.</li>
+            <li>A full <strong>DQN</strong> implementation tuned for the exploration–exploitation balance.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="results">
+          <h2>Results</h2>
+          <div class="metrics">
+            <div class="metric"><b>500</b><span>Reward score</span></div>
+            <div class="metric"><b>95%</b><span>Convergence</span></div>
+            <div class="metric"><b>800</b><span>Episodes to converge</span></div>
+          </div>
+        </section>
+
+        <section class="block" id="challenges">
+          <h2>Challenges</h2>
+          <ul class="c-list">
+            <li><strong>Training instability:</strong> naive Q-learning diverged — a target network was needed to stabilize the bootstrapped targets.</li>
+            <li><strong>Exploration:</strong> tuning the ε-decay schedule balanced early exploration against late exploitation.</li>
+            <li><strong>Sample efficiency:</strong> experience replay broke correlation between consecutive frames and sped up learning.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="learnings">
+          <h2>Learnings</h2>
+          <ul class="c-list">
+            <li><strong>Stability tricks are the whole game</strong> in deep RL — replay and target networks separate "diverges" from "solves it".</li>
+            <li>Reward curves are noisy; judging progress needs <strong>moving averages</strong>, not single episodes.</li>
+            <li>Hyperparameters (ε-decay, learning rate, buffer size) dominate outcomes.</li>
+          </ul>
+        </section>
+
+        <!--
+          ============================================================
+          DEMO & VISUALS — hidden for now. Uncomment when ready.
+          Tip: record the agent landing (Gym renders to MP4/GIF) + the reward curve.
+          ============================================================
+        <section class="block" id="media">
+          <h2>Demo &amp; visuals</h2>
+          <p>Add a GIF/MP4 of the trained agent landing and the reward-vs-episode curve here.</p>
+        </section>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <div class="case-next">
+    <div class="container">
+      <a href="credit-default-prediction.html">
+        <span><span class="cn-label">Next project</span><br /><span class="cn-title">Credit Card Default Prediction</span></span>
+        <span class="cn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sameer Surla</span>
+      <span class="footer-mark">Designed &amp; built from scratch</span>
+      <button class="to-top" id="toTop" aria-label="Back to top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

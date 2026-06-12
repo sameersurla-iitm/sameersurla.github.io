@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Multi-Doc Q&amp;A Chatbot — Sameer Surla</title>
+  <meta name="description" content="A retrieval-augmented multi-document Q&A chatbot using FAISS, HuggingFace embeddings and Cohere — 95% answer accuracy, 35% lower latency." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="nav proj-nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html#projects" class="back-link">← All projects</a>
+      <div class="nav-right" style="margin-left:auto">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="case-hero">
+    <div class="aurora" aria-hidden="true"><div class="aurora-blob a1"></div><div class="aurora-blob a2"></div><div class="aurora-blob a3"></div></div>
+    <div class="container">
+      <span class="case-cat">GenAI · Retrieval-Augmented Generation</span>
+      <h1 class="case-title">RAG Multi-Doc Q&amp;A Chatbot</h1>
+      <p class="case-tagline">Ask questions across a whole set of documents and get grounded, cited answers — built on FAISS retrieval, HuggingFace embeddings and a Cohere LLM.</p>
+      <dl class="case-meta">
+        <div><dt>Role</dt><dd>Solo build</dd></div>
+        <div><dt>Type</dt><dd>Personal project</dd></div>
+        <div><dt>Timeline</dt><dd>Apr — Aug 2024</dd></div>
+        <div><dt>Accuracy</dt><dd>95% multi-doc</dd></div>
+      </dl>
+      <div class="case-links"><a href="https://github.com/sameersurla-iitm" target="_blank" rel="noopener" class="btn btn-glass">View on GitHub →</a></div>
+      <div class="case-stack"><span>Python</span><span>RAG</span><span>FAISS</span><span>HuggingFace</span><span>Cohere</span><span>LangChain</span><span>RCTS</span></div>
+    </div>
+  </section>
+
+  <div class="case">
+    <div class="container case-grid">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#motivation">Motivation</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#build">What I built</a>
+        <a href="#results">Results</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#learnings">Learnings</a>
+      </aside>
+
+      <div class="case-content">
+        <section class="block" id="motivation">
+          <h2>Motivation</h2>
+          <p>LLMs hallucinate and have no knowledge of your private documents. The fix is <strong>retrieval-augmented generation</strong>: fetch the most relevant passages first, then let the model answer using only that context. I wanted a chatbot that could reason across <strong>multiple documents at once</strong> and return precise, grounded answers.</p>
+        </section>
+
+        <section class="block" id="architecture">
+          <h2>Architecture</h2>
+          <p>Documents are chunked, embedded and indexed in FAISS. At query time the system retrieves top-k passages and passes them as context to the Cohere LLM, which generates a grounded answer.</p>
+          <div class="arch">
+            <div class="flow">
+              <div class="node"><span class="ni">📄</span><span class="nt">Documents</span><span class="ns">multi-source</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">✂️</span><span class="nt">RCTS Chunking</span><span class="ns">recursive split</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🔢</span><span class="nt">HF Embeddings</span><span class="ns">vectorize</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🧭</span><span class="nt">FAISS Index</span><span class="ns">top-k search</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🤖</span><span class="nt">Cohere LLM</span><span class="ns">grounded answer</span></div>
+            </div>
+            <p class="arch-cap">Retrieve-then-generate: context is fetched before the model ever answers.</p>
+          </div>
+        </section>
+
+        <section class="block" id="build">
+          <h2>What I built</h2>
+          <ul class="c-list">
+            <li>A <strong>FAISS-backed vector store</strong> for fast similarity search across all indexed documents.</li>
+            <li><strong>HuggingFace embeddings</strong> for high-quality semantic retrieval.</li>
+            <li>A <strong>Cohere LLM</strong> integrated into the retrieval pipeline for answer generation.</li>
+            <li><strong>Recursive Character Text Splitting (RCTS)</strong> tuned for chunk size and overlap to maximize retrieval quality.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="results">
+          <h2>Results</h2>
+          <div class="metrics">
+            <div class="metric"><b>95%</b><span>Multi-doc answer accuracy</span></div>
+            <div class="metric"><b>−35%</b><span>Latency via chunking</span></div>
+            <div class="metric"><b>Multi-doc</b><span>Cross-document reasoning</span></div>
+          </div>
+        </section>
+
+        <section class="block" id="challenges">
+          <h2>Challenges</h2>
+          <ul class="c-list">
+            <li><strong>Chunking trade-offs:</strong> chunks too large dilute relevance; too small lose context. Tuning RCTS size/overlap was the highest-impact lever — and cut latency 35%.</li>
+            <li><strong>Retrieval precision:</strong> picking embeddings and top-k that surfaced the right passages without flooding the prompt.</li>
+            <li><strong>Grounding:</strong> shaping prompts so the model answered from retrieved context instead of its own priors.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="learnings">
+          <h2>Learnings</h2>
+          <ul class="c-list">
+            <li><strong>Retrieval quality caps answer quality</strong> — most RAG wins come from the retrieval half, not the model.</li>
+            <li>Chunking strategy is a real hyperparameter worth systematic tuning.</li>
+            <li>A thin, well-structured prompt with good context beats a clever prompt with poor context.</li>
+          </ul>
+        </section>
+
+        <!--
+          ============================================================
+          DEMO & VISUALS — hidden for now. Uncomment when ready.
+          Tip: deploy as a Gradio app on Hugging Face Spaces (free) and embed it,
+          plus add screenshots and a 2-min walkthrough video.
+          ============================================================
+        <section class="block" id="media">
+          <h2>Demo &amp; visuals</h2>
+          <p>Add a live demo embed, screenshots and a walkthrough video here.</p>
+        </section>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <div class="case-next">
+    <div class="container">
+      <a href="industrial-vision-ai.html">
+        <span><span class="cn-label">Next project</span><br /><span class="cn-title">Industrial Safety Vision AI</span></span>
+        <span class="cn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sameer Surla</span>
+      <span class="footer-mark">Designed &amp; built from scratch</span>
+      <button class="to-top" id="toTop" aria-label="Back to top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

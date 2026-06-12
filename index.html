@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sameer Surla — AI Systems &amp; Data Engineer</title>
+  <meta name="description" content="Sameer Surla — Data Engineer at FedEx and AI Systems Engineer. IIT Madras graduate building production data platforms, RAG/LLM applications, agentic AI and computer-vision systems." />
+  <meta name="author" content="Sameer Surla" />
+  <meta name="theme-color" content="#0a0d16" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sameer Surla — AI Systems &amp; Data Engineer" />
+  <meta property="og:description" content="Building production data platforms and AI systems — RAG, LLMs, agentic AI and computer vision." />
+  <meta property="og:image" content="assets/og-image.svg" />
+  <meta property="og:url" content="https://sameersurla.vercel.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sameer Surla — AI Systems &amp; Data Engineer" />
+  <meta name="twitter:description" content="Building production data platforms and AI systems — RAG, LLMs, agentic AI and computer vision." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://sameersurla.vercel.app" />
+
+  <!-- Premium fonts: Clash Display (headings) + Satoshi (body) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a href="#hero" class="skip-link">Skip to content</a>
+
+  <!-- Texture + cursor glow + progress -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===================== NAV (floating pill) ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="#hero" class="nav-brand" aria-label="Home">
+        <span class="nav-brand-dot"></span> Sameer
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="nav-cta">Let's talk</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="aurora" aria-hidden="true">
+        <div class="aurora-blob a1"></div>
+        <div class="aurora-blob a2"></div>
+        <div class="aurora-blob a3"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-badge reveal"><span class="ping"></span> Open to AI / Data roles · Bengaluru</p>
+          <h1 class="hero-name reveal">
+            Sameer&nbsp;Surla
+          </h1>
+          <p class="hero-role reveal">
+            I build <span class="accent" id="rotator">data platforms</span>
+          </p>
+          <p class="hero-desc reveal">
+            Data Engineer at <strong>FedEx</strong> and AI Systems Engineer from
+            <strong>IIT&nbsp;Madras</strong>. I ship production data pipelines and
+            intelligent systems across <strong>RAG, LLM applications, agentic AI</strong>
+            and <strong>computer vision</strong>.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="btn btn-primary magnetic">View my work</a>
+            <a href="resume.html" class="btn btn-glass magnetic">Résumé</a>
+          </div>
+          <div class="hero-meta reveal">
+            <a href="https://github.com/sameersurla-iitm" target="_blank" rel="noopener" class="hero-social" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.17 3.14-1.17.63 1.59.24 2.76.12 3.05.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.66.41.36.78 1.06.78 2.14 0 1.55-.02 2.8-.02 3.18 0 .31.21.68.8.56A11.53 11.53 0 0 0 23.5 12.02C23.5 5.74 18.27.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sameer-surla-iitm/" target="_blank" rel="noopener" class="hero-social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="mailto:sameersurla07@gmail.com" class="hero-social" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap reveal">
+          <div class="hero-photo-ring"></div>
+          <div class="hero-photo">
+            <img src="assets/profile.jpeg" alt="Sameer Surla" width="832" height="1248" />
+          </div>
+          <div class="hero-photo-chip chip-top">
+            <span class="chip-k">Now</span><span class="chip-v">Data Engineer @ FedEx</span>
+          </div>
+          <div class="hero-photo-chip chip-bottom">
+            <span class="chip-k">Edu</span><span class="chip-v">IIT Madras '25</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll"><span></span></a>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>RAG</span><i>✦</i><span>LLM Applications</span><i>✦</i><span>Agentic AI</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>Ab Initio</span><i>✦</i><span>Python</span><i>✦</i><span>FAISS</span><i>✦</i><span>PyTorch</span><i>✦</i><span>Data Platforms</span><i>✦</i><span>113M+ rows</span><i>✦</i>
+        <span>RAG</span><i>✦</i><span>LLM Applications</span><i>✦</i><span>Agentic AI</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>Ab Initio</span><i>✦</i><span>Python</span><i>✦</i><span>FAISS</span><i>✦</i><span>PyTorch</span><i>✦</i><span>Data Platforms</span><i>✦</i><span>113M+ rows</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===================== ABOUT — BENTO GRID ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-kicker">/ about</span>
+          <h2 class="sec-title">A quick snapshot</h2>
+        </header>
+
+        <div class="bento">
+          <!-- Bio -->
+          <article class="bento-card b-bio reveal">
+            <h3>Engineer at the intersection of <span class="accent">data &amp; AI</span></h3>
+            <p>
+              I love the full arc — designing reliable pipelines that move hundreds of
+              millions of rows, and shipping applied AI: retrieval-augmented generation,
+              LLM apps and computer-vision systems. Four AI internships, one production
+              data-engineering role, and a bias for taking things from notebook to
+              deployment.
+            </p>
+          </article>
+
+          <!-- Stat 1 -->
+          <article class="bento-card b-stat reveal">
+            <span class="stat-num" data-count="113" data-suffix="M+">0</span>
+            <span class="stat-label">rows in a production pipeline</span>
+          </article>
+
+          <!-- Stat 2 -->
+          <article class="bento-card b-stat accent-card reveal">
+            <span class="stat-num"><span data-count="10">0</span>d→4h</span>
+            <span class="stat-label">rate-update turnaround cut</span>
+          </article>
+
+          <!-- Now -->
+          <article class="bento-card b-now reveal">
+            <span class="bento-eyebrow">Currently</span>
+            <h4>Data Engineer I</h4>
+            <p class="bento-sub">FedEx · US Revenue Quality</p>
+            <p class="bento-mini">Migrating a SAS surcharge platform to Ab Initio — config-driven, validated, automated.</p>
+          </article>
+
+          <!-- Education -->
+          <article class="bento-card b-edu reveal">
+            <span class="bento-eyebrow">Education</span>
+            <h4>B.Tech — IIT Madras</h4>
+            <p class="bento-sub">Civil Engineering · CGPA 7.92 · 2021–2025</p>
+          </article>
+
+          <!-- Focus -->
+          <article class="bento-card b-focus reveal">
+            <span class="bento-eyebrow">What I work on</span>
+            <ul class="focus-list">
+              <li>RAG &amp; LLM applications</li>
+              <li>Agentic AI systems</li>
+              <li>Production data platforms</li>
+              <li>Computer vision</li>
+            </ul>
+          </article>
+
+          <!-- Location / availability -->
+          <article class="bento-card b-loc reveal">
+            <span class="bento-eyebrow">Based in</span>
+            <h4>Bengaluru, India</h4>
+            <p class="bento-sub"><span class="ping"></span> Open to new opportunities</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section" id="work">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-kicker">/ experience</span>
+          <h2 class="sec-title">Where I've worked</h2>
+        </header>
+
+        <div class="xp">
+          <article class="xp-row reveal">
+            <div class="xp-when"><span class="xp-date">2025 — Now</span><span class="xp-co">FedEx</span></div>
+            <div class="xp-card">
+              <div class="xp-top"><h3>Data Engineer I</h3><span class="xp-loc">Bengaluru</span></div>
+              <p class="xp-tag">US Surcharge Dashboard — SAS → Ab Initio Migration · US RQ Team</p>
+              <ul class="xp-points">
+                <li>Led a production ETL pipeline processing <strong>113M+ rows</strong> across 25 months.</li>
+                <li>Built a <strong>config-driven Ab Initio (PDL)</strong> solution — rate-update turnaround <strong>10 days → 4 hours</strong>.</li>
+                <li>Large-scale validation for data accuracy; automated reporting &amp; email distribution.</li>
+              </ul>
+              <div class="xp-chips"><span>Ab Initio</span><span>PDL</span><span>SQL</span><span>Teradata</span><span>ETL</span></div>
+            </div>
+          </article>
+
+          <article class="xp-row reveal">
+            <div class="xp-when"><span class="xp-date">Jan–May 2025</span><span class="xp-co">Detect Technologies</span></div>
+            <div class="xp-card">
+              <div class="xp-top"><h3>AI Intern</h3><span class="xp-loc">Chennai</span></div>
+              <p class="xp-tag">Generative AI for Industrial Safety</p>
+              <ul class="xp-points">
+                <li>End-to-end Gen-AI for safety — image generation + real-time video analysis.</li>
+                <li>FLUX-based image generator (GUI + headless); structured prompt/config logging.</li>
+                <li>Multi-threaded video analysis with <strong>Qwen VLM, OpenCV &amp; Streamlit</strong>.</li>
+              </ul>
+              <div class="xp-chips"><span>Qwen VLM</span><span>FLUX</span><span>OpenCV</span><span>Streamlit</span></div>
+            </div>
+          </article>
+
+          <article class="xp-row reveal">
+            <div class="xp-when"><span class="xp-date">May–Jul 2024</span><span class="xp-co">Diax.AI</span></div>
+            <div class="xp-card">
+              <div class="xp-top"><h3>AI Intern</h3><span class="xp-loc">Chennai</span></div>
+              <p class="xp-tag">Medical Computer Vision</p>
+              <ul class="xp-points">
+                <li>Diabetic foot-ulcer detector <strong>adopted by the Tamil Nadu Government</strong>.</li>
+                <li><strong>95% accuracy</strong> YOLO detection; potential reach 10M+ patients.</li>
+                <li>+15% robustness via annotation/augmentation of 3,000+ images (Roboflow).</li>
+              </ul>
+              <div class="xp-chips"><span>YOLO</span><span>PyTorch</span><span>Roboflow</span></div>
+            </div>
+          </article>
+
+          <article class="xp-row reveal">
+            <div class="xp-when"><span class="xp-date">Feb–May 2024</span><span class="xp-co">MachIntell</span></div>
+            <div class="xp-card">
+              <div class="xp-top"><h3>SDE &amp; Reliability Intern</h3><span class="xp-loc">Chennai</span></div>
+              <p class="xp-tag">Reliability Engineering &amp; Diagnostics</p>
+              <ul class="xp-points">
+                <li>Malfunction detection for OEMs — <strong>98.76% accuracy</strong> on a monitoring product.</li>
+                <li>Cut diagnosis time <strong>40%</strong> with MCF, Laplace and event-plot analysis.</li>
+                <li>Integrated across database, frontend, backend and hardware teams.</li>
+              </ul>
+              <div class="xp-chips"><span>Python</span><span>Signal Processing</span><span>Full-stack</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-kicker">/ projects</span>
+          <h2 class="sec-title">Selected work</h2>
+          <p class="sec-lead">Each opens a full case study — motivation, architecture, results, challenges and learnings.</p>
+        </header>
+
+        <div class="filters reveal" id="filters">
+          <button class="chip-btn is-active" data-filter="all">All</button>
+          <button class="chip-btn" data-filter="data">Data Engineering</button>
+          <button class="chip-btn" data-filter="genai">GenAI / LLM</button>
+          <button class="chip-btn" data-filter="cv">Computer Vision</button>
+          <button class="chip-btn" data-filter="ml">ML / RL</button>
+        </div>
+
+        <div class="proj-grid" id="projGrid">
+          <a href="projects/fedex-etl-pipeline.html" class="proj tilt reveal" data-cat="data">
+            <div class="proj-glow g1"></div>
+            <div class="proj-head"><span class="proj-emoji">🚀</span><span class="proj-pill">Flagship · Production</span></div>
+            <h3>US Surcharge ETL Platform</h3>
+            <p>Config-driven Ab Initio pipeline over 113M+ rows — cut rate updates from 10 days to 4 hours at FedEx.</p>
+            <div class="proj-foot"><div class="proj-tags"><span>Ab Initio</span><span>PDL</span><span>ETL</span></div><span class="proj-arrow">→</span></div>
+          </a>
+
+          <a href="projects/atlas-research-agent.html" class="proj tilt reveal" data-cat="genai">
+            <div class="proj-glow g2"></div>
+            <div class="proj-head"><span class="proj-emoji">🛰️</span><span class="proj-pill">Agentic AI · Multi-Agent</span></div>
+            <h3>Atlas — Autonomous Research Agent</h3>
+            <p>A Planner→Researcher→Critic→Synthesizer pipeline that researches the live web and writes fully-cited reports — on free LLM tiers.</p>
+            <div class="proj-foot"><div class="proj-tags"><span>Multi-Agent</span><span>Streamlit</span><span>Gemini</span></div><span class="proj-arrow">→</span></div>
+          </a>
+
+          <a href="projects/rag-chatbot.html" class="proj tilt reveal" data-cat="genai">
+            <div class="proj-glow g2"></div>
+            <div class="proj-head"><span class="proj-emoji">💬</span><span class="proj-pill">RAG · LLM</span></div>
+            <h3>RAG Multi-Doc Q&amp;A Chatbot</h3>
+            <p>Retrieval-augmented Q&amp;A over many docs with FAISS + HuggingFace + Cohere — 95% answer accuracy.</p>
+            <div class="proj-foot"><div class="proj-tags"><span>RAG</span><span>FAISS</span><span>Cohere</span></div><span class="proj-arrow">→</span></div>
+          </a>
+
+          <a href="projects/industrial-vision-ai.html" class="proj tilt reveal" data-cat="genai cv">
+            <div class="proj-glow g3"></div>
+            <div class="proj-head"><span class="proj-emoji">🦺</span><span class="proj-pill">GenAI · VLM</span></div>
+            <h3>Industrial Safety Vision AI</h3>
+            <p>Real-time video safety monitoring with Qwen VLM + a FLUX generator for rare hazard training data.</p>
+            <div class="proj-foot"><div class="proj-tags"><span>Qwen VLM</span><span>FLUX</span><span>OpenCV</span></div><span class="proj-arrow">→</span></div>
+          </a>
+
+          <a href="projects/diabetic-ulcer-detection.html" class="proj tilt reveal" data-cat="cv">
+            <div class="proj-glow g4"></div>
+            <div class="proj-head"><span class="proj-emoji">🩺</span><span class="proj-pill">Computer Vision · Impact</span></div>
+            <h3>Diabetic Foot Ulcer Detection</h3>
+            <p>YOLO detector at 95% accuracy, adopted by the Tamil Nadu Government — potential reach 10M+ patients.</p>
+            <div class="proj-foot"><div class="proj-tags"><span>YOLO</span><span>PyTorch</span><span>Roboflow</span></div><span class="proj-arrow">→</span></div>
+          </a>
+
+          <a href="projects/lunar-lander-rl.html" class="proj tilt reveal" data-cat="ml">
+            <div class="proj-glow g5"></div>
+            <div class="proj-head"><span class="proj-emoji">🛰️</span><span class="proj-pill">Reinforcement Learning</span></div>
+            <h3>Lunar Lander — Deep RL</h3>
+            <p>DQN agent landing a craft in OpenAI Gym — reward 500 via experience replay and target networks.</p>
+            <div class="proj-foot"><div class="proj-tags"><span>DQN</span><span>OpenAI Gym</span><span>PyTorch</span></div><span class="proj-arrow">→</span></div>
+          </a>
+
+          <a href="projects/credit-default-prediction.html" class="proj tilt reveal" data-cat="ml data">
+            <div class="proj-glow g6"></div>
+            <div class="proj-head"><span class="proj-emoji">💳</span><span class="proj-pill">ML · Risk</span></div>
+            <h3>Credit Card Default Prediction</h3>
+            <p>XGBoost risk model at 90% validation accuracy over 300K+ transactions; 0.870 AUC after tuning.</p>
+            <div class="proj-foot"><div class="proj-tags"><span>XGBoost</span><span>Scikit-learn</span></div><span class="proj-arrow">→</span></div>
+          </a>
+        </div>
+
+        <p class="proj-more reveal">More — <strong>Fantasy IPL Prediction</strong> (TensorFlow + XGBoost, 0.87 AUC) and a
+          <strong>Hindi→English Transliteration RNN</strong> (LSTM, 90.6%) on
+          <a href="https://github.com/sameersurla-iitm" target="_blank" rel="noopener">GitHub →</a></p>
+      </div>
+    </section>
+
+    <!-- ===================== STACK ===================== -->
+    <section class="section" id="stack">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-kicker">/ stack</span>
+          <h2 class="sec-title">Tools &amp; technologies</h2>
+        </header>
+        <div class="stack-grid">
+          <div class="stack-col reveal"><h4>Languages</h4><div class="chips"><span>Python</span><span>SQL</span><span>C++</span><span>MATLAB</span></div></div>
+          <div class="stack-col reveal"><h4>AI / ML</h4><div class="chips"><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span><span>XGBoost</span><span>OpenCV</span></div></div>
+          <div class="stack-col reveal"><h4>GenAI / LLM</h4><div class="chips"><span>RAG</span><span>FAISS</span><span>LangChain</span><span>Hugging Face</span><span>Cohere</span><span>VLMs</span></div></div>
+          <div class="stack-col reveal"><h4>Data Engineering</h4><div class="chips"><span>Ab Initio</span><span>PDL</span><span>SAS</span><span>ETL</span><span>Teradata</span></div></div>
+          <div class="stack-col reveal"><h4>Tools</h4><div class="chips"><span>Git</span><span>Jupyter</span><span>Colab</span><span>Roboflow</span><span>Tableau</span><span>LaTeX</span></div></div>
+          <div class="stack-col reveal"><h4>Certifications</h4><div class="chips"><span>Deep Learning — Stanford</span><span>ML — Stanford</span><span>Algorithms — Stanford</span><span>Data Analytics — Google</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      ============================================================
+      WRITING / BLOG — hidden for now (enable when posts are live).
+      Uncomment this whole block when you publish on Dev.to/Medium/Hashnode.
+      ============================================================
+    <section class="section" id="writing">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="sec-kicker">/ writing</span>
+          <h2 class="sec-title">Engineering notes</h2>
+        </header>
+        <div class="stack-grid">
+          <article class="bento-card reveal"><span class="bento-eyebrow">Data Engineering</span><h4>From 10 Days to 4 Hours: Rebuilding a Surcharge Pipeline</h4><a href="#" target="_blank" rel="noopener">Read →</a></article>
+          <article class="bento-card reveal"><span class="bento-eyebrow">GenAI</span><h4>Building a Production RAG Pipeline with FAISS</h4><a href="#" target="_blank" rel="noopener">Read →</a></article>
+          <article class="bento-card reveal"><span class="bento-eyebrow">Computer Vision</span><h4>Shipping Industrial Vision AI in Real Time</h4><a href="#" target="_blank" rel="noopener">Read →</a></article>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contact">
+      <div class="aurora aurora-contact" aria-hidden="true"><div class="aurora-blob a1"></div><div class="aurora-blob a3"></div></div>
+      <div class="container contact-inner reveal">
+        <span class="sec-kicker">/ contact</span>
+        <h2 class="contact-title">Let's build something<br />worth remembering.</h2>
+        <p class="contact-lead">
+          Open to roles and collaborations in <strong>AI systems, data platforms, applied ML and GenAI</strong>.
+          Fastest way to reach me is email.
+        </p>
+        <div class="contact-actions">
+          <a href="mailto:sameersurla07@gmail.com" class="btn btn-primary btn-lg magnetic" id="emailBtn">sameersurla07@gmail.com</a>
+          <button class="btn btn-glass btn-lg magnetic" id="copyEmail" data-email="sameersurla07@gmail.com">Copy email</button>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/sameersurla-iitm" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/sameer-surla-iitm/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="resume.html">Résumé</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sameer Surla</span>
+      <span class="footer-mark">Designed &amp; built from scratch</span>
+      <button class="to-top" id="toTop" aria-label="Back to top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credit Card Default Prediction — Sameer Surla</title>
+  <meta name="description" content="An XGBoost credit-risk model at 90% validation accuracy over 300K+ transactions, refined to 0.870 AUC with feature engineering and tuning." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="nav proj-nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html#projects" class="back-link">← All projects</a>
+      <div class="nav-right" style="margin-left:auto">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="case-hero">
+    <div class="aurora" aria-hidden="true"><div class="aurora-blob a1"></div><div class="aurora-blob a2"></div><div class="aurora-blob a3"></div></div>
+    <div class="container">
+      <span class="case-cat">Machine Learning · Risk Modeling</span>
+      <h1 class="case-title">Credit Card Default Prediction</h1>
+      <p class="case-tagline">A gradient-boosted credit-risk model estimating default probability over 300K+ transactions — 90% validation accuracy and 0.870 AUC after tuning.</p>
+      <dl class="case-meta">
+        <div><dt>Role</dt><dd>Solo build</dd></div>
+        <div><dt>Type</dt><dd>Personal project</dd></div>
+        <div><dt>Timeline</dt><dd>Nov — Dec 2023</dd></div>
+        <div><dt>Data</dt><dd>300K+ transactions</dd></div>
+      </dl>
+      <div class="case-links"><a href="https://github.com/sameersurla-iitm" target="_blank" rel="noopener" class="btn btn-glass">View on GitHub →</a></div>
+      <div class="case-stack"><span>XGBoost</span><span>Random Forest</span><span>Gradient Boosting</span><span>Scikit-learn</span><span>Feature Engineering</span><span>Python</span></div>
+    </div>
+  </section>
+
+  <div class="case">
+    <div class="container case-grid">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#motivation">Motivation</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#build">What I built</a>
+        <a href="#results">Results</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#learnings">Learnings</a>
+      </aside>
+
+      <div class="case-content">
+        <section class="block" id="motivation">
+          <h2>Motivation</h2>
+          <p>Lenders need to estimate the probability that a customer defaults so they can price risk and manage exposure. The goal was a model that's both <strong>accurate and well-calibrated</strong> on a large, imbalanced transaction dataset — and interpretable enough to trust for risk decisions.</p>
+        </section>
+
+        <section class="block" id="architecture">
+          <h2>Architecture</h2>
+          <p>A standard but rigorous ML pipeline: clean and impute, engineer features, train gradient-boosted ensembles, and validate with cross-validation and AUC rather than accuracy alone.</p>
+          <div class="arch">
+            <div class="flow">
+              <div class="node"><span class="ni">💳</span><span class="nt">Transactions</span><span class="ns">300K+</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🧹</span><span class="nt">Impute + Engineer</span><span class="ns">feature design</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🌲</span><span class="nt">XGBoost / RF</span><span class="ns">ensembles</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">📈</span><span class="nt">CV + AUC</span><span class="ns">0.870 AUC</span></div>
+            </div>
+            <p class="arch-cap">Risk modeling is judged on AUC and calibration, not headline accuracy.</p>
+          </div>
+        </section>
+
+        <section class="block" id="build">
+          <h2>What I built</h2>
+          <ul class="c-list">
+            <li>Models to estimate <strong>default probability</strong> for risk management.</li>
+            <li>An <strong>XGBoost model at 90% validation accuracy</strong> over 300K+ transactions.</li>
+            <li>An optimized <strong>Random Forest</strong>, with results improved <strong>23%</strong> through feature engineering.</li>
+            <li>A refined <strong>Gradient Boosting</strong> model reaching <strong>86.3% F1</strong> and <strong>0.870 AUC</strong> via cross-validation and hyperparameter tuning.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="results">
+          <h2>Results</h2>
+          <div class="metrics">
+            <div class="metric"><b>90%</b><span>Validation accuracy</span></div>
+            <div class="metric"><b>0.870</b><span>AUC</span></div>
+            <div class="metric"><b>86.3%</b><span>F1 score</span></div>
+            <div class="metric"><b>+23%</b><span>Lift from feature eng.</span></div>
+          </div>
+        </section>
+
+        <section class="block" id="challenges">
+          <h2>Challenges</h2>
+          <ul class="c-list">
+            <li><strong>Class imbalance:</strong> defaults are the minority class, so accuracy is misleading — I optimized for F1 and AUC instead.</li>
+            <li><strong>Feature engineering:</strong> the biggest gains (23%) came from derived features, not model swaps.</li>
+            <li><strong>Generalization:</strong> cross-validation and tuning guarded against overfitting on 300K+ rows.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="learnings">
+          <h2>Learnings</h2>
+          <ul class="c-list">
+            <li>On imbalanced problems, <strong>pick the right metric first</strong> — accuracy hides failure.</li>
+            <li><strong>Feature engineering &gt; model choice</strong> for tabular data; gradient boosting just amplifies good features.</li>
+            <li>Cross-validation is non-negotiable for trustworthy risk estimates.</li>
+          </ul>
+        </section>
+
+        <!--
+          ============================================================
+          DEMO & VISUALS — hidden for now. Uncomment when ready.
+          Tip: a Streamlit app (upload row → default probability + SHAP) hosts free.
+          ============================================================
+        <section class="block" id="media">
+          <h2>Demo &amp; visuals</h2>
+          <p>Add the ROC curve, confusion matrix and a SHAP feature-importance plot here.</p>
+        </section>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <div class="case-next">
+    <div class="container">
+      <a href="fedex-etl-pipeline.html">
+        <span><span class="cn-label">Back to start</span><br /><span class="cn-title">US Surcharge ETL Platform</span></span>
+        <span class="cn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sameer Surla</span>
+      <span class="footer-mark">Designed &amp; built from scratch</span>
+      <button class="to-top" id="toTop" aria-label="Back to top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

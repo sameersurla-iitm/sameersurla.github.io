@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas — Autonomous Research Agent · Sameer Surla</title>
+  <meta name="description" content="A multi-agent AI system that plans, researches the live web, self-critiques for gaps, and writes fully-cited reports — built on a Planner→Researcher→Critic→Synthesizer pipeline with free LLMs." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700,500&f[]=satoshi@400,500,700,900&f[]=space-mono@400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="nav proj-nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html#projects" class="back-link">← All projects</a>
+      <div class="nav-right" style="margin-left:auto">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="case-hero">
+    <div class="aurora" aria-hidden="true"><div class="aurora-blob a1"></div><div class="aurora-blob a2"></div><div class="aurora-blob a3"></div></div>
+    <div class="container">
+      <span class="case-cat">Agentic AI · Multi-Agent Systems</span>
+      <h1 class="case-title">Atlas — Autonomous Research Agent</h1>
+      <p class="case-tagline">A multi-agent system that plans a research strategy, gathers evidence from the live web, critiques its own findings for gaps, and writes a fully-cited report — running entirely on free LLM tiers.</p>
+      <dl class="case-meta">
+        <div><dt>Role</dt><dd>Solo build</dd></div>
+        <div><dt>Type</dt><dd>Personal project</dd></div>
+        <div><dt>Pattern</dt><dd>4-agent pipeline</dd></div>
+        <div><dt>Cost to run</dt><dd>$0 (free tiers)</dd></div>
+      </dl>
+      <div class="case-links">
+        <a href="https://atlas-research-agent.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary">Live demo ↗</a>
+        <a href="https://github.com/sameersurla-iitm/atlas-research-agent" target="_blank" rel="noopener" class="btn btn-glass">View on GitHub →</a>
+        <a href="#demo" class="btn btn-glass">Watch walkthrough ▷</a>
+      </div>
+      <div class="case-stack"><span>Python</span><span>Streamlit</span><span>Multi-Agent</span><span>Gemini / Groq</span><span>Pydantic</span><span>Brave + DuckDuckGo</span><span>Jina Reader</span></div>
+    </div>
+  </section>
+
+  <div class="case">
+    <div class="container case-grid">
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#motivation">Motivation</a>
+        <a href="#demo">Demo</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#build">What I built</a>
+        <a href="#results">Results</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#learnings">Learnings</a>
+      </aside>
+
+      <div class="case-content">
+        <section class="block" id="motivation">
+          <h2>Motivation</h2>
+          <p>Most "AI research" demos are a single search call wrapped around an LLM — they answer fast but can't tell you <em>how</em> they got there, and they happily hallucinate. I wanted to build something that works like a careful analyst: <strong>break the question down, gather real evidence, challenge its own conclusions, and cite every claim.</strong></p>
+          <p>The goal was an <strong>agentic system</strong> — multiple specialized agents collaborating through an orchestration layer — that a startup founder could look at and think "this person understands how to build production AI, not just call an API." And it had to run for <strong>free</strong>, so anyone can reproduce it.</p>
+        </section>
+
+        <section class="block" id="demo">
+          <h2>Demo</h2>
+          <p>A full run on the query <em>"What is a multi-agent workflow and how can anyone build one for free?"</em> — watch the agents plan, search, self-critique, and stream a cited report in real time.</p>
+          <div class="media-embed">
+            <!--
+              TODO: paste your YouTube EMBED url below and delete the placeholder div.
+              Example:
+              <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Atlas demo"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            -->
+            <div class="media-placeholder">
+              <span class="mp-icon">🎬</span>
+              <span class="mp-title">Walkthrough video</span>
+              <span class="mp-sub">Embed coming soon — paste the YouTube embed URL in this section.</span>
+            </div>
+          </div>
+          <p class="media-cap">2-minute end-to-end walkthrough: plan → research → critique → cited report.</p>
+        </section>
+
+        <section class="block" id="architecture">
+          <h2>Architecture</h2>
+          <p>Atlas is a <strong>linear multi-agent pipeline</strong>. Each agent has one job, and a critic loop lets the system send itself back to do more research when coverage is thin — the behavior that makes it "agentic" rather than a one-shot chain.</p>
+          <div class="arch">
+            <div class="flow">
+              <div class="node"><span class="ni">🧭</span><span class="nt">Planner</span><span class="ns">decompose query</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🔎</span><span class="nt">Researcher</span><span class="ns">search + extract</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">🧪</span><span class="nt">Critic</span><span class="ns">find gaps ↺</span></div>
+              <div class="flow-arrow">→</div>
+              <div class="node"><span class="ni">📄</span><span class="nt">Synthesizer</span><span class="ns">cited report</span></div>
+            </div>
+            <p class="arch-cap">The Critic can loop back to the Researcher with follow-up queries before the report is written.</p>
+          </div>
+          <ul class="c-list">
+            <li><strong>Web search</strong> via Brave API with an automatic <strong>DuckDuckGo</strong> fallback (no key needed).</li>
+            <li><strong>Content extraction</strong> via Jina Reader → clean Markdown, with a BeautifulSoup fallback.</li>
+            <li><strong>Provider-agnostic LLM layer</strong> (Gemini / Groq / OpenAI) behind one client, with <strong>per-model failover</strong> and rate-limit-aware pacing to survive free-tier quotas.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="build">
+          <h2>What I built</h2>
+          <ul class="c-list">
+            <li>A <strong>Planner agent</strong> that turns a broad question into focused, independently-researchable sub-questions, each with concrete search queries.</li>
+            <li>A <strong>Researcher agent</strong> that searches, reads top sources, and extracts <strong>source-attributed facts</strong> — it can only cite pages it actually read, so it can't invent references.</li>
+            <li>A <strong>Critic agent</strong> that reviews coverage, flags gaps and conflicts, and triggers follow-up research — a genuine self-correction loop.</li>
+            <li>A <strong>Synthesizer agent</strong> that streams a structured, inline-cited Markdown report with a confidence assessment.</li>
+            <li>An <strong>evaluation harness</strong> scoring citation quality, an LLM-as-judge rubric (accuracy / completeness / coherence), and speed across a curated query suite.</li>
+            <li>A polished <strong>Streamlit UI</strong> with live agent-stage updates, a source-credibility view, and per-run telemetry (tokens, calls, latency, production-equivalent cost).</li>
+          </ul>
+        </section>
+
+        <section class="block" id="results">
+          <h2>Results</h2>
+          <p>A representative run produced a fully-cited, multi-section report with conflicting-source handling — for a fraction of a cent in production-equivalent cost, and $0 on free tiers.</p>
+          <div class="metrics">
+            <div class="metric"><b>8</b><span>Sources cited per report</span></div>
+            <div class="metric"><b>$0.016</b><span>Equivalent cost / run</span></div>
+            <div class="metric"><b>$0</b><span>Actual cost (free tiers)</span></div>
+            <div class="metric"><b>4 agents</b><span>Plan · Research · Critique · Synthesize</span></div>
+          </div>
+          <div class="callout"><p>Every factual claim in the output maps to a real URL the Researcher read — the system is built so it <strong>cannot cite a source it didn't open.</strong></p></div>
+        </section>
+
+        <section class="block" id="challenges">
+          <h2>Challenges</h2>
+          <ul class="c-list">
+            <li><strong>Free-tier rate limits:</strong> bursting calls to one model tripped per-minute quotas. I added request pacing, retry-delay parsing, and <strong>cross-model failover</strong> so the pipeline degrades gracefully instead of failing.</li>
+            <li><strong>Hallucinated citations:</strong> solved by forcing the LLM to reference only numbered sources it was handed, then mapping each fact back to a real URL.</li>
+            <li><strong>Corporate TLS interception:</strong> HTTPS calls failed behind a TLS-inspecting proxy; routing verification through the OS trust store fixed it without weakening security.</li>
+            <li><strong>Perceived hangs:</strong> a blocked endpoint stalled on the SDK's long default timeout — tightened timeouts plus live progress so the UI always shows what's happening.</li>
+          </ul>
+        </section>
+
+        <section class="block" id="learnings">
+          <h2>Learnings</h2>
+          <ul class="c-list">
+            <li><strong>Orchestration beats model choice.</strong> The structure — decompose, gather, critique, synthesize — mattered far more than which LLM sat underneath.</li>
+            <li><strong>Self-critique is cheap and powerful.</strong> One critic loop measurably improved coverage for a couple of extra calls.</li>
+            <li><strong>Production-mindedness is a feature.</strong> Surfacing cost, latency, and source credibility makes the system legible — and signals real engineering, not a toy.</li>
+            <li><strong>Design for the free tier.</strong> Pacing and failover turned an unreliable demo into something anyone can run for $0.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-next">
+    <div class="container">
+      <a href="rag-chatbot.html">
+        <span><span class="cn-label">Next project</span><br /><span class="cn-title">RAG Multi-Doc Q&amp;A Chatbot</span></span>
+        <span class="cn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sameer Surla</span>
+      <span class="footer-mark">Designed &amp; built from scratch</span>
+      <button class="to-top" id="toTop" aria-label="Back to top">Back to top ↑</button>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
